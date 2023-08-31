@@ -10,6 +10,10 @@
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  {{ 'product-media-slick-gallery.css' | asset_url | stylesheet_tag }}
+
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
@@ -30,6 +34,24 @@
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+  <script src="{{ 'jquery-3.7.1.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'slick.js' | asset_url }}" defer="defer"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        $('.your-class').slick(
+          {
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev"><img src="{{'prev-arrow.svg' | asset_url}}" alt="Previous Arrow"/></button>',
+            nextArrow: '<button type="button" class="slick-next"><img src="{{'next-arrow.svg' | asset_url}}" alt="Next Arrow"/></button>'
+          }
+        );
+    });
+  </script>
+
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -41,6 +63,8 @@
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
+
+  
 
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
@@ -65,7 +89,19 @@
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+      {% comment %}
       {% render 'product-media-gallery', variant_images: variant_images %}
+    {% endcomment %}
+    {% comment %}  
+    {% render 'product-media-slick-gallery', variable: variant_images  %}
+  {% endcomment %}
+    {% if product.images.size > 0 %}
+    <div class="your-class">
+      {% for image in product.images %}
+        <div>{{ image | img_tag }}</div>
+      {% endfor %}
+      </div>
+      {% endif %}
     </div>
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <product-info
