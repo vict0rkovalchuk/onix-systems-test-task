@@ -1,5 +1,7 @@
-.slick-slide {
-  text-align: center;
+.slick-slide img.slide-image {
+  margin: 0 auto;
+  max-width: 212px;
+  object-fit: cover;
 }
 
 .slick-prev {
@@ -34,7 +36,7 @@
   display: flex;
   justify-content: center;
   margin: 0;
-  padding: 1rem 0;
+  padding: 70px 0 0 0;
   list-style-type: none;
 }
 .slick-dots li {
@@ -48,12 +50,13 @@
   border: none;
   border-radius: 100%;
   background-color: transparent;
-  border: 1px solid rgba(17, 17, 17, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   text-indent: -9999px;
+  cursor: pointer;
 }
 .slick-dots li.slick-active button {
   border: none;
-  /* background-color: #FFF; */
-  background-color: #000;
+  background-color: #fff;
+  /* background-color: #000; */
 }

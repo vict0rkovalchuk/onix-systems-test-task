@@ -5,7 +5,7 @@
     "footer": {
       "type": "footer",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-3b63f0b4-9607-40f4-9b85-69a31108d3e6",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
@@ -15,7 +15,7 @@
         "payment_enable": true,
         "show_policy": false,
         "margin_top": 0,
-        "padding_top": 36,
+        "padding_top": 28,
         "padding_bottom": 36
       }
     }

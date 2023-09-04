@@ -1,0 +1,8 @@
+{% case icon %}
+  {% when 'affordable' %}
+  {{ "icon-affordable.svg" | asset_url | img_tag: 'icon-segment', 'icon similar-products__item-header-icon' }}
+  {% when 'premium' %}
+  {{ "icon-premium.svg" | asset_url | img_tag: 'icon-segment', 'icon similar-products__item-header-icon' }}
+  {% when 'middle-segment' %}
+  {{ "icon-middle-segment.svg" | asset_url | img_tag: 'icon-segment', 'icon similar-products__item-header-icon' }}
+{% endcase %}

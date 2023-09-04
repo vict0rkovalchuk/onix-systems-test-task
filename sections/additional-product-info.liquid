@@ -1,0 +1,78 @@
+<div class="page-width additional-info">
+  <div class="additional-info-description">
+    {{ product.metafields.product.additional-description.value }}
+  </div>
+  <div class="additional-info-acordeon">
+    <div class="row">
+      <div class="col">
+        <div class="tabs">
+          <div class="tab">
+            <input
+              type="radio"
+              id="rd1"
+              name="rd">
+            <label class="tab-label" for="rd1">Ingredients</label>
+            <div class="tab-content">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Amount per serving</th>
+                    <th>Daily value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{ product.metafields.product.supplemented-facts.value }}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab">
+            <input
+              type="radio"
+              id="rd2"
+              name="rd">
+            <label class="tab-label" for="rd2">Supplemented Facts</label>
+            <div class="tab-content">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Amount per serving</th>
+                    <th>Daily value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{ product.metafields.product.supplemented-facts.value }}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab">
+            <input
+              type="radio"
+              id="rd3"
+              name="rd">
+            <label class="tab-label" for="rd3">Warning</label>
+            <div class="tab-content">
+              Warning info
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Additional Product Info",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Additional Product Info"
+      }
+    ]
+  }
+{% endschema %}

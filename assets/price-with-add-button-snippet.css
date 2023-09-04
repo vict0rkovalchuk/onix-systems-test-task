@@ -1,0 +1,33 @@
+.price-with-add-button-snippet {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+/* Customizing Add To Cart Button */
+.product-form__buttons button {
+  width: 296px;
+  text-align: center;
+
+  border-radius: 12px;
+  background: #f57f20;
+}
+/* Customizing Add To Cart Button */
+
+@media (max-width: 992px) {
+  .price-with-add-button-snippet {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 750px) {
+  .product-form__buttons button {
+    width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-form__buttons button {
+    width: calc(100vw - 1.5rem - 1.5rem);
+  }
+}

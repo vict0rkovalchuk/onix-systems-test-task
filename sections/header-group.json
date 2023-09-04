@@ -17,7 +17,7 @@
         "announcement-bar-0"
       ],
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-3b63f0b4-9607-40f4-9b85-69a31108d3e6",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -29,12 +29,13 @@
     "header": {
       "type": "header",
       "settings": {
+        "instagram_link": "https:\/\/www.instagram.com\/",
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-3b63f0b4-9607-40f4-9b85-69a31108d3e6",
         "menu_color_scheme": "background-1",
         "enable_country_selector": true,
         "enable_language_selector": true,

@@ -1,0 +1,52 @@
+<div class="page-width similar-products">
+  <h2 class="similar-products__title">Similar Products</h2>
+  {% assign handle_name = product.metafields.product.similar-products.value.handle %}
+
+  {% if collections[handle_name].products.size > 0 %}
+    <div class="similar-products__items">
+      {% for product in collections[handle_name].products %}
+
+        {% assign segment_handle = product.metafields.global.segment.value | handle %}
+
+        <div class="similar-products__item">
+          <div class="similar-products__item-header">
+            {% render 'icons-segment', icon: segment_handle %}
+            <div>{{ product.metafields.global.segment.value }}</div>
+          </div>
+          <div class="similar-products__item-image">
+            <img src=" {{ product.images | first | img_url: 'large'}}" alt="{{ product.title }}">
+            {% if product.compare_at_price > product.price %}
+              <div class="similar-products__item-sale">sale</div>
+            {% endif %}
+          </div>
+          <div class="similar-products__item-title">
+            {{ product.title }}</div>
+          <div class="similar-products__item-price">
+            <div class="actual-price">{{ product.price | money_with_currency | slice: 1, product.price }}</div>
+            {% if product.compare_at_price > product.price %}
+              <div class="compare-price">{{ product.compare_at_price | money_with_currency | slice: 1, product.compare_at_price }}</div>
+            {% endif %}
+          </div>
+          <a href="{{product.handle}}" class="similar-products__item-button">vIEW DETAILS</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="similar-products no-similar-products">
+      No Products
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Similar Products",
+    "tag": "section",
+    "class": "section",
+    "presets": [
+      {
+        "name": "Similar Products"
+      }
+    ]
+  }
+{% endschema %}

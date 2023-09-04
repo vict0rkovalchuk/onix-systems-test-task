@@ -1,0 +1,186 @@
+.similar-products {
+  color: white;
+  margin-bottom: 55px;
+}
+
+.similar-products.no-similar-products {
+  text-align: center;
+}
+
+.similar-products .similar-products__title {
+  color: #fff;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+
+.similar-products .similar-products__items {
+  padding-top: 36px;
+  padding-bottom: 55px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  /* gap: 30px; */
+}
+
+.similar-products .similar-products__item {
+  display: flex;
+  /* width: 297px; */
+  /* padding-bottom: 0px; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 8px; */
+  border-radius: 12px;
+  background: #151515;
+}
+
+.similar-products .similar-products__item .similar-products__item-header {
+  display: flex;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  padding: 6px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #2c2c2c;
+
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.similar-products .similar-products__item .similar-products__item-sale {
+  position: absolute;
+  bottom: -20px;
+  color: #f52d20;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.similar-products .similar-products__item .similar-products__item-image {
+  position: relative;
+  display: flex;
+  height: 222px;
+  margin: 8px 5.5px 0 5.5px;
+  padding: 29px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.similar-products .similar-products__item .similar-products__item-image img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.similar-products .similar-products__item .similar-products__item-title {
+  margin-top: 39px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.similar-products .similar-products__item .similar-products__item-price {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140.023%;
+}
+
+.similar-products
+  .similar-products__item
+  .similar-products__item-price
+  .actual-price {
+}
+
+.similar-products
+  .similar-products__item
+  .similar-products__item-price
+  .compare-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.similar-products .similar-products__item .similar-products__item-button {
+  margin: 16px 16px 16px;
+  display: flex;
+  /* width: 254px;
+  height: 48px; */
+  padding: 12px 45px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: #f57f20;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* @media (max-width: 1200px) {
+  .similar-products .similar-products__item .similar-products__item-button {
+    font-size: 10px;
+  }
+} */
+
+@media (max-width: 1100px) {
+  .similar-products .similar-products__item .similar-products__item-button {
+    padding: 12px 36px;
+  }
+}
+
+@media (max-width: 992px) {
+  .similar-products .similar-products__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .similar-products .similar-products__item .similar-products__item-button {
+    padding: 12px 45px;
+  }
+}
+
+@media (max-width: 814px) {
+  .similar-products .similar-products__item .similar-products__item-button {
+    padding: 12px 34px;
+  }
+}
+
+@media (max-width: 750px) {
+  .similar-products .similar-products__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .similar-products .similar-products__item .similar-products__item-button {
+    padding: 12px 45px;
+  }
+}
+
+@media (max-width: 576px) {
+  .similar-products .similar-products__items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
